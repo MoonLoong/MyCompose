@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.syl.mycompose.MainViewModel
@@ -49,7 +50,7 @@ fun WeTopBar(title: String, onBack: (() -> Unit)? = null) {
       val viewModel: MainViewModel = viewModel()
       Icon(
         painterResource(R.drawable.ic_palette),
-        "切换主题",
+        contentDescription = stringResource(id = R.string.switch_theme),
         Modifier
           .clickable {
             viewModel.theme = when (viewModel.theme) {

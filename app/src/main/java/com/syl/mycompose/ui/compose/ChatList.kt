@@ -18,10 +18,12 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.syl.mycompose.MainViewModel
+import com.syl.mycompose.R
 import com.syl.mycompose.data.Chat
 import com.syl.mycompose.ui.theme.WeComposeTheme
 
@@ -35,7 +37,7 @@ fun ChatList(chats: List<Chat>) {
             .background(WeComposeTheme.colors.background)
             .fillMaxSize()
     ) {
-        WeTopBar(title = "微信")
+        ChatListTopBar()
         LazyColumn(Modifier.background(WeComposeTheme.colors.listItem)) {
             itemsIndexed(chats) { index, chat ->
                 ChatListItem(chat)
@@ -49,6 +51,11 @@ fun ChatList(chats: List<Chat>) {
             }
         }
     }
+}
+
+@Composable
+fun ChatListTopBar() {
+    WeTopBar(title = stringResource(id = R.string.title_we_chat))
 }
 
 @Composable
