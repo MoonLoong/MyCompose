@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -23,6 +24,8 @@ import androidx.compose.ui.unit.dp
 import com.syl.mycompose.ui.compose.ChatPage
 import com.syl.mycompose.ui.compose.Home
 import com.syl.mycompose.ui.theme.WeComposeTheme
+import com.syl.mycompose.ui.theme.medium
+import com.syl.mycompose.ui.theme.small
 
 
 class MainActivity : ComponentActivity() {
@@ -63,12 +66,14 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         modifier = modifier
             .wrapContentSize(align = Alignment.Center)
             .padding(10.dp)
-            .background(brush = brushVertical)
+            .clip(medium)
+            .background(brush = brushVertical, small)
             .padding(5.dp)
-//            .drawBehind {
+//            .clip(small) 放这里就不生效了
+//            .drawBehind {// 绘制圆形背景
 //                drawCircle(
 //                    color = Color.Green,
-//                    radius = this.size.maxDimension
+//                    radius = this.size.minDimension
 //                )
 //            }
             .clickable {
