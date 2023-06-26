@@ -77,11 +77,17 @@ private val NewYearColorPalette = WeComposeColors(
     chatPageBgAlpha = 1f,
 )
 
+/**
+ * 1.定义CompositionLocal
+ */
 private val LocalWeComposeColors = compositionLocalOf {
     LightColorPalette
 }
 
 object WeComposeTheme {
+    /**
+     * 3.使用CompositionLocal
+     */
     val colors: WeComposeColors
         @Composable
         get() = LocalWeComposeColors.current
@@ -201,6 +207,9 @@ fun WeComposeTheme(
         chatPageBgAlpha = chatPageBgAlpha.value,
     )
 
+    /**
+     * 2.将 colors 赋值给 CompositionLocal
+     */
     CompositionLocalProvider(LocalWeComposeColors provides colors) {
         MaterialTheme(
             colorScheme = colorScheme,
