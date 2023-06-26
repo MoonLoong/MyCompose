@@ -214,7 +214,7 @@ fun WeComposeTheme(
         MaterialTheme(
             colorScheme = colorScheme,
             shapes = shapes,
-            typography = Typography,
+            typography = Typography,// 使用自定义的字体
             content = content
         )
     }
