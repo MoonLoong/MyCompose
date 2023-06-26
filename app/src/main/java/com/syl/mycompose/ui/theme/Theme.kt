@@ -85,6 +85,7 @@ object WeComposeTheme {
     val colors: WeComposeColors
         @Composable
         get() = LocalWeComposeColors.current
+
     enum class Theme {
         Light, Dark, NewYear
     }
@@ -150,7 +151,10 @@ class WeComposeColors(
 }
 
 @Composable
-fun WeComposeTheme(theme: WeComposeTheme.Theme = WeComposeTheme.Theme.Light, content: @Composable() () -> Unit) {
+fun WeComposeTheme(
+    theme: WeComposeTheme.Theme = WeComposeTheme.Theme.Light,
+    content: @Composable() () -> Unit
+) {
     val targetColors = when (theme) {
         WeComposeTheme.Theme.Light -> LightColorPalette
         WeComposeTheme.Theme.Dark -> DarkColorPalette

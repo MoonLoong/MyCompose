@@ -25,88 +25,88 @@ import com.syl.mycompose.ui.theme.WeComposeTheme
 
 @Composable
 fun WeBottomBar(selected: Int, onSelectedChanged: (Int) -> Unit) {
-  Row(Modifier.background(WeComposeTheme.colors.bottomBar)) {
-    TabItem(
-      if (selected == 0) R.drawable.ic_chat_filled else R.drawable.ic_chat_outlined, "聊天",
-      if (selected == 0) WeComposeTheme.colors.iconCurrent else WeComposeTheme.colors.icon,
-      Modifier
-        .weight(1f)
-        .clickable {
-          onSelectedChanged(0)
-        }
-    )
-    TabItem(
-      if (selected == 1) R.drawable.ic_contacts_filled else R.drawable.ic_contacts_outlined,
-      "通讯录",
-      if (selected == 1) WeComposeTheme.colors.iconCurrent else WeComposeTheme.colors.icon,
-      Modifier
-        .weight(1f)
-        .clickable {
-          onSelectedChanged(1)
-        }
-    )
-    TabItem(
-      if (selected == 2) R.drawable.ic_discovery_filled else R.drawable.ic_discovery_outlined,
-      "发现",
-      if (selected == 2) WeComposeTheme.colors.iconCurrent else WeComposeTheme.colors.icon,
-      Modifier
-        .weight(1f)
-        .clickable {
-          onSelectedChanged(2)
-        }
-    )
-    TabItem(
-      if (selected == 3) R.drawable.ic_me_filled else R.drawable.ic_me_outlined, "我",
-      if (selected == 3) WeComposeTheme.colors.iconCurrent else WeComposeTheme.colors.icon,
-      Modifier
-        .weight(1f)
-        .clickable {
-          onSelectedChanged(3)
-        }
-    )
-  }
+    Row(Modifier.background(WeComposeTheme.colors.bottomBar)) {
+        TabItem(
+            if (selected == 0) R.drawable.ic_chat_filled else R.drawable.ic_chat_outlined, "聊天",
+            if (selected == 0) WeComposeTheme.colors.iconCurrent else WeComposeTheme.colors.icon,
+          Modifier
+            .weight(1f)
+            .clickable {
+              onSelectedChanged(0)
+            }
+        )
+        TabItem(
+            if (selected == 1) R.drawable.ic_contacts_filled else R.drawable.ic_contacts_outlined,
+            "通讯录",
+            if (selected == 1) WeComposeTheme.colors.iconCurrent else WeComposeTheme.colors.icon,
+          Modifier
+            .weight(1f)
+            .clickable {
+              onSelectedChanged(1)
+            }
+        )
+        TabItem(
+            if (selected == 2) R.drawable.ic_discovery_filled else R.drawable.ic_discovery_outlined,
+            "发现",
+            if (selected == 2) WeComposeTheme.colors.iconCurrent else WeComposeTheme.colors.icon,
+          Modifier
+            .weight(1f)
+            .clickable {
+              onSelectedChanged(2)
+            }
+        )
+        TabItem(
+            if (selected == 3) R.drawable.ic_me_filled else R.drawable.ic_me_outlined, "我",
+            if (selected == 3) WeComposeTheme.colors.iconCurrent else WeComposeTheme.colors.icon,
+          Modifier
+            .weight(1f)
+            .clickable {
+              onSelectedChanged(3)
+            }
+        )
+    }
 }
 
 @Composable
 fun TabItem(@DrawableRes iconId: Int, title: String, tint: Color, modifier: Modifier = Modifier) {
-  Column(
-    modifier.padding(vertical = 8.dp),
-    horizontalAlignment = Alignment.CenterHorizontally
-  ) {
-    Icon(painterResource(iconId), title, Modifier.size(24.dp), tint = tint)
-    Text(title, fontSize = 11.sp, color = tint)
-  }
+    Column(
+        modifier.padding(vertical = 8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Icon(painterResource(iconId), title, Modifier.size(24.dp), tint = tint)
+        Text(title, fontSize = 11.sp, color = tint)
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun WeBottomBarPreview() {
-  WeComposeTheme(WeComposeTheme.Theme.Light) {
-    val selectedTab = remember { mutableStateOf(0) }
-    WeBottomBar(selectedTab.value) { selectedTab.value = it }
-  }
+    WeComposeTheme(WeComposeTheme.Theme.Light) {
+        val selectedTab = remember { mutableStateOf(0) }
+        WeBottomBar(selectedTab.value) { selectedTab.value = it }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun WeBottomBarPreviewDark() {
-  WeComposeTheme(WeComposeTheme.Theme.Dark) {
-    val selectedTab = remember { mutableStateOf(0) }
-    WeBottomBar(selectedTab.value) { selectedTab.value = it }
-  }
+    WeComposeTheme(WeComposeTheme.Theme.Dark) {
+        val selectedTab = remember { mutableStateOf(0) }
+        WeBottomBar(selectedTab.value) { selectedTab.value = it }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun WeBottomBarPreviewNewYear() {
-  WeComposeTheme(WeComposeTheme.Theme.NewYear) {
-    val selectedTab = remember { mutableStateOf(0) }
-    WeBottomBar(selectedTab.value) { selectedTab.value = it }
-  }
+    WeComposeTheme(WeComposeTheme.Theme.NewYear) {
+        val selectedTab = remember { mutableStateOf(0) }
+        WeBottomBar(selectedTab.value) { selectedTab.value = it }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun TabItemPreview() {
-  TabItem(iconId = R.drawable.ic_chat_outlined, title = "聊天", tint = WeComposeTheme.colors.icon)
+    TabItem(iconId = R.drawable.ic_chat_outlined, title = "聊天", tint = WeComposeTheme.colors.icon)
 }

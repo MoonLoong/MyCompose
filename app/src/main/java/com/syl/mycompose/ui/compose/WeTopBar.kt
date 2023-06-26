@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.syl.mycompose.MainViewModel
@@ -25,46 +26,52 @@ import com.syl.mycompose.ui.theme.WeComposeTheme
 
 @Composable
 fun WeTopBar(title: String, onBack: (() -> Unit)? = null) {
-  Box(
-    Modifier
-      .background(WeComposeTheme.colors.background)
-      .fillMaxWidth()
-  ) {
-    Row(
+    Box(
       Modifier
-        .height(48.dp)
+        .background(WeComposeTheme.colors.background)
+        .fillMaxWidth()
     ) {
-      if (onBack != null) {
-        Icon(
-          painterResource(R.drawable.ic_back),
-          null,
-          Modifier
-            .clickable(onClick = onBack)
-            .align(Alignment.CenterVertically)
-            .size(36.dp)
-            .padding(8.dp),
-          tint = WeComposeTheme.colors.icon
-        )
-      }
-      Spacer(Modifier.weight(1f))
-      val viewModel: MainViewModel = viewModel()
-      Icon(
-        painterResource(R.drawable.ic_palette),
-        contentDescription = stringResource(id = R.string.switch_theme),
-        Modifier
-          .clickable {
-            viewModel.theme = when (viewModel.theme) {
-              WeComposeTheme.Theme.Light -> WeComposeTheme.Theme.Dark
-              WeComposeTheme.Theme.Dark -> WeComposeTheme.Theme.NewYear
-              WeComposeTheme.Theme.NewYear -> WeComposeTheme.Theme.Light
+        Row(
+            Modifier
+                .height(48.dp)
+        ) {
+            if (onBack != null) {
+                Icon(
+                    painterResource(R.drawable.ic_back),
+                    null,
+                  Modifier
+                    .clickable(onClick = onBack)
+                    .align(Alignment.CenterVertically)
+                    .size(36.dp)
+                    .padding(8.dp),
+                    tint = WeComposeTheme.colors.icon
+                )
             }
-          }
-          .align(Alignment.CenterVertically)
-          .size(36.dp)
-          .padding(8.dp),
-        tint = WeComposeTheme.colors.icon
-      )
+            Spacer(Modifier.weight(1f))
+            val viewModel: MainViewModel = viewModel()
+            Icon(
+                painterResource(R.drawable.ic_palette),
+                contentDescription = stringResource(id = R.string.switch_theme),
+              Modifier
+                .clickable {
+                  viewModel.theme = when (viewModel.theme) {
+                    WeComposeTheme.Theme.Light -> WeComposeTheme.Theme.Dark
+                    WeComposeTheme.Theme.Dark -> WeComposeTheme.Theme.NewYear
+                    WeComposeTheme.Theme.NewYear -> WeComposeTheme.Theme.Light
+                  }
+                }
+                .align(Alignment.CenterVertically)
+                .size(36.dp)
+                .padding(8.dp),
+                tint = WeComposeTheme.colors.icon
+            )
+        }
+        Text(title, Modifier.align(Alignment.Center), color = WeComposeTheme.colors.textPrimary)
     }
-    Text(title, Modifier.align(Alignment.Center), color = WeComposeTheme.colors.textPrimary)
-  }
+}
+
+@Preview
+@Composable
+fun ShowWeTopBar() {
+    WeTopBar("微信")
 }
