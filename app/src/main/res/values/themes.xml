@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.MyCompose" parent="android:Theme.Material.Light.NoActionBar" >
-        <!--状态栏颜色-->
-        <item name="android:statusBarColor">#4CAF50</item>
+    <style name="Theme.MyCompose.Splash" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@drawable/bg_splash</item>
     </style>
+
+<!--    <style name="Theme.AndroidTemplate.Splash" parent="android:Theme.Material.Light.NoActionBar">-->
+<!--        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>-->
+<!--        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>-->
+<!--        <item name="android:windowBackground">@drawable/bg_splash</item>-->
+<!--    </style>-->
+
+<!--    <style name="Theme.AndroidTemplate" parent="Theme.MyCompose.Splash">-->
+<!--        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>-->
+<!--        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>-->
+<!--        <item name="markdownTextColor">@color/markdownTextColor</item>-->
+<!--        <item name="markdownTabCellTextColor">@color/markdownTabCellTextColor</item>-->
+<!--    </style>-->
 </resources>

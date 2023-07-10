@@ -29,7 +29,7 @@ import com.syl.mycompose.theme.green1
 import com.syl.mycompose.theme.small
 
 
-class MainActivity : ComponentActivity() {
+class HomeActivity : ComponentActivity() {
 
     private val viewModel: MainViewModel by viewModels()
 
