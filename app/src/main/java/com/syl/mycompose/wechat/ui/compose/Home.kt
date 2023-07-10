@@ -1,4 +1,4 @@
-package com.syl.mycompose.ui.compose
+package com.syl.mycompose.wechat.ui.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
-import com.syl.mycompose.MainViewModel
+import com.syl.mycompose.wechat.MainViewModel
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)

@@ -1,4 +1,4 @@
-package com.syl.mycompose.ui.compose
+package com.syl.mycompose.wechat.ui.compose
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.animateFloatAsState
@@ -30,11 +30,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.syl.mycompose.MainViewModel
+import com.syl.mycompose.wechat.MainViewModel
 import com.syl.mycompose.R
-import com.syl.mycompose.data.Msg
-import com.syl.mycompose.data.User
-import com.syl.mycompose.ui.theme.WeComposeTheme
+import com.syl.mycompose.wechat.data.Msg
+import com.syl.mycompose.wechat.data.User
+import com.syl.mycompose.theme.WeComposeTheme
 import kotlinx.coroutines.delay
 import kotlin.math.roundToInt
 

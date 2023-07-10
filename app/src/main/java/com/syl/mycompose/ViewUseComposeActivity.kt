@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.syl.mycompose.ui.theme.WeComposeTheme
-import com.syl.mycompose.ui.theme.red1
+import com.syl.mycompose.theme.WeComposeTheme
+import com.syl.mycompose.theme.red1
 
 /**
  * View中使用Compose

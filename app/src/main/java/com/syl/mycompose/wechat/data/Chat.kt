@@ -1,4 +1,4 @@
-package com.syl.mycompose.data
+package com.syl.mycompose.wechat.data
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable

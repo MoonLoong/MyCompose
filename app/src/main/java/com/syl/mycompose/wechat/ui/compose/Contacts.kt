@@ -1,4 +1,4 @@
-package com.syl.mycompose.ui.compose
+package com.syl.mycompose.wechat.ui.compose
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -25,10 +25,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.syl.mycompose.MainViewModel
+import com.syl.mycompose.wechat.MainViewModel
 import com.syl.mycompose.R
-import com.syl.mycompose.data.User
-import com.syl.mycompose.ui.theme.WeComposeTheme
+import com.syl.mycompose.wechat.data.User
+import com.syl.mycompose.theme.WeComposeTheme
 
 @Composable
 fun ContactListTopBar() {

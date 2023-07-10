@@ -1,4 +1,4 @@
-package com.syl.mycompose.ui.theme
+package com.syl.mycompose.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

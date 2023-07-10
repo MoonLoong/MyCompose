@@ -1,4 +1,4 @@
-package com.syl.mycompose.ui.theme
+package com.syl.mycompose.theme
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.TweenSpec

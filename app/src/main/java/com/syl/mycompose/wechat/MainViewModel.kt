@@ -1,14 +1,15 @@
-package com.syl.mycompose
+package com.syl.mycompose.wechat
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.syl.mycompose.data.Chat
-import com.syl.mycompose.data.Msg
-import com.syl.mycompose.data.User
-import com.syl.mycompose.ui.theme.WeComposeTheme
+import com.syl.mycompose.R
+import com.syl.mycompose.wechat.data.Chat
+import com.syl.mycompose.wechat.data.Msg
+import com.syl.mycompose.wechat.data.User
+import com.syl.mycompose.theme.WeComposeTheme
 
 
 /**

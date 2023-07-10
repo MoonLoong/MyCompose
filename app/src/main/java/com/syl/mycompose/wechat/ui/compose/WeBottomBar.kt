@@ -1,4 +1,4 @@
-package com.syl.mycompose.ui.compose
+package com.syl.mycompose.wechat.ui.compose
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.syl.mycompose.R
-import com.syl.mycompose.ui.theme.WeComposeTheme
+import com.syl.mycompose.theme.WeComposeTheme
 
 
 @Composable

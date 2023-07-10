@@ -1,4 +1,4 @@
-package com.syl.mycompose.ui.theme
+package com.syl.mycompose.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.unit.dp

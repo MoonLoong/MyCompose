@@ -1,4 +1,4 @@
-package com.syl.mycompose
+package com.syl.mycompose.wechat
 
 import android.os.Bundle
 import android.widget.Toast
@@ -22,11 +22,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.syl.mycompose.ui.compose.ChatPage
-import com.syl.mycompose.ui.compose.Home
-import com.syl.mycompose.ui.theme.WeComposeTheme
-import com.syl.mycompose.ui.theme.green1
-import com.syl.mycompose.ui.theme.small
+import com.syl.mycompose.wechat.ui.compose.ChatPage
+import com.syl.mycompose.wechat.ui.compose.Home
+import com.syl.mycompose.theme.WeComposeTheme
+import com.syl.mycompose.theme.green1
+import com.syl.mycompose.theme.small
 
 
 class MainActivity : ComponentActivity() {
