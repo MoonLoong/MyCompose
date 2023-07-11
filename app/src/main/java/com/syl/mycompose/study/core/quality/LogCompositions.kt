@@ -3,7 +3,7 @@ package com.syl.mycompose.study.core.quality
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.remember
-import androidx.multidex.BuildConfig
+import com.syl.mycompose.BuildConfig
 import com.syl.mycompose.study.log.TAG_RECOMPOSE
 import timber.log.Timber
 

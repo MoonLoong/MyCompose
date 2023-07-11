@@ -58,9 +58,14 @@ import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.launch
 
 
-
+/**
+ * 登录状态
+ */
 val LocalLoginState = staticCompositionLocalOf { false }
 
+/**
+ * snackBar 状态
+ */
 val LocalSnackbarHostState = compositionLocalOf { SnackbarHostState() }
 
 data class BottomNavigationModel(

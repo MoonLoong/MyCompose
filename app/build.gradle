@@ -41,6 +41,8 @@ android {
     buildFeatures {
         // 开启compose
         compose true
+        // AGP8.0.0 后默认禁用了生成buildConfig， build/generated/source下不生成buildConfig文件夹
+        buildConfig true
     }
     composeOptions {
         // kotlin编译器扩展版本，版本需要和kotlin版本匹配

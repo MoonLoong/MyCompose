@@ -2,11 +2,11 @@ package com.syl.mycompose.study
 
 import android.app.Application
 import android.content.Context
-import androidx.multidex.BuildConfig
 import androidx.multidex.MultiDex
 import com.github.panpf.sketch.Sketch
 import com.github.panpf.sketch.SketchFactory
 import com.github.panpf.sketch.decode.SvgBitmapDecoder
+import com.syl.mycompose.BuildConfig
 import com.syl.mycompose.study.repository.local.RoomHelp
 import com.syl.mycompose.study.repository.remote.NetHelper
 import com.syl.mycompose.study.log.CrashReportingTree

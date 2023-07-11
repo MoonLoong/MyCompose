@@ -30,7 +30,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.platform.debugInspectorInfo
 import androidx.compose.ui.unit.dp
-import androidx.multidex.BuildConfig
+import com.syl.mycompose.BuildConfig
 import kotlinx.coroutines.delay
 import kotlin.math.min
 
