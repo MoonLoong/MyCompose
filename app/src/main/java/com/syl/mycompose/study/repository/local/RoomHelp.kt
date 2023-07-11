@@ -9,7 +9,7 @@ object RoomHelp {
     fun init(context: Context) {
         db = Room.databaseBuilder(
             context,
-            AppDatabase::class.java, "compose-study"
+            AppDatabase::class.java, "my-compose"
         ).build()
     }
 }

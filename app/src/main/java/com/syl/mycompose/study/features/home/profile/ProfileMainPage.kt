@@ -56,7 +56,7 @@ import com.syl.mycompose.study.features.home.profile.components.LogoutDialogC
 import com.syl.mycompose.study.features.home.profile.components.ProfileAvatarC
 import com.syl.mycompose.study.features.home.profile.components.ProfileMenuItemC
 import com.syl.mycompose.study.features.home.profile.components.ProfileUserNameC
-import com.gzq.wanandroid.ui.common.OnDevelopingDialogC
+import com.syl.mycompose.study.ui.common.OnDevelopingDialogC
 import com.syl.mycompose.R
 import com.syl.mycompose.study.constant.HttpUrl
 import com.syl.mycompose.study.custom.MyBackHandler

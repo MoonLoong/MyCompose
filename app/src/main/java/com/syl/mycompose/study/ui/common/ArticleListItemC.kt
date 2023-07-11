@@ -30,6 +30,7 @@ import com.syl.mycompose.study.model.Article
 @Composable
 fun ArticleListItemC(article: Article, modifier: Modifier = Modifier) {
 
+    // 约束布局的使用
     ConstraintLayout(
         modifier = modifier
             .clip(RoundedCornerShape(4.dp))

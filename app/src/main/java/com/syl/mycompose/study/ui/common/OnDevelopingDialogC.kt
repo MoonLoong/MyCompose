@@ -1,4 +1,4 @@
-package com.gzq.wanandroid.ui.common
+package com.syl.mycompose.study.ui.common
 
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme

@@ -1,4 +1,4 @@
-package com.gzq.wanandroid.features.main.custom
+package com.syl.mycompose.study.features.main.custom
 
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.foundation.shape.CornerSize

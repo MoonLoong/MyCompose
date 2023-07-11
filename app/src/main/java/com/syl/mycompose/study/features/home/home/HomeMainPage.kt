@@ -123,7 +123,7 @@ fun HomeMainPage(
             ) {
                 itemsIndexed(
                     items = data ?: emptyList(),
-                ) { index, item ->
+                ) { _, item ->
                     ArticleListItemC(
                         article = item,
                         Modifier

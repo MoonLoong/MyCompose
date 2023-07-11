@@ -29,9 +29,6 @@ class App : Application(), SketchFactory {
 
         MMKV.initialize(this)
 
-//        CrashReport.setIsDevelopmentDevice(this, BuildConfig.DEBUG)
-//        CrashReport.initCrashReport(this, Const.Bugly_App_Id, BuildConfig.DEBUG)
-
         //初始网络工具类
         NetHelper.init(this)
 

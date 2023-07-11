@@ -9,10 +9,9 @@ object LocalKey {
 }
 
 object HttpUrl {
+    // 隐私协议地址
     const val Privacy_Policy = "https://www.baidu.com"
-    const val User_Policy = "https://www.baidu.com"
-}
 
-object Const {
-    const val Bugly_App_Id = "f273b972f1"
+    // 用户协议地址
+    const val User_Policy = "https://www.baidu.com"
 }

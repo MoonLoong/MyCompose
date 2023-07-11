@@ -45,7 +45,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavOptionsBuilder
 import com.syl.mycompose.study.features.main.components.DrawableContentC
-import com.gzq.wanandroid.features.main.custom.DrawerShape
+import com.syl.mycompose.study.features.main.custom.DrawerShape
 import com.syl.mycompose.R
 import com.syl.mycompose.study.constant.LocalKey
 import com.syl.mycompose.study.core.quality.LogCompositions
