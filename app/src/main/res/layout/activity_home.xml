@@ -4,4 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--在ComposeView中使用view的属性有时候不提示，这点比较坑
+    例如：android:background="@color/white"-->
+
 </androidx.compose.ui.platform.ComposeView>

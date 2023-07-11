@@ -31,9 +31,12 @@ class ViewUseComposeActivity : Activity() {
             }
         }
     }
+
     @Composable
     private fun HomeView() {
-        Surface(modifier = Modifier.fillMaxSize()) {
+        Surface(
+            modifier = Modifier.fillMaxSize()
+        ) {
             Text(
                 text = "View中使用Compose",
                 modifier = Modifier.wrapContentSize(),
@@ -42,6 +45,7 @@ class ViewUseComposeActivity : Activity() {
             )
         }
     }
+
     @Preview(showBackground = true)
     @Composable
     fun ShowTestHomeActivity() {
