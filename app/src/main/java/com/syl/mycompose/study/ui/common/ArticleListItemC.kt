@@ -25,7 +25,7 @@ import androidx.constraintlayout.compose.Dimension
 import com.syl.mycompose.study.model.Article
 
 /**
- * 文章列表
+ * 文章列表Item
  */
 @Composable
 fun ArticleListItemC(article: Article, modifier: Modifier = Modifier) {

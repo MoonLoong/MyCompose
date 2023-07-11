@@ -9,7 +9,6 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CornerSize
-import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Home
@@ -68,6 +67,10 @@ val LocalLoginState = staticCompositionLocalOf { false }
  */
 val LocalSnackbarHostState = compositionLocalOf { SnackbarHostState() }
 
+
+/**
+ * 底部导航数据模型
+ */
 data class BottomNavigationModel(
     val tag: HomeNav,
     @StringRes val labelId: Int,
@@ -119,7 +122,7 @@ fun MainPage(
     LogCompositions(msg = "MainPage")
 
     AndroidTemplateTheme {
-        Scaffold(
+        androidx.compose.material.Scaffold(
             scaffoldState = scaffoldState,
             //因为使用的androidx.compose.material.Scaffold
             //所以使用不到主题颜色
@@ -151,7 +154,7 @@ fun MainPage(
                 }
             } else null,
             drawerShape = DrawerShape(
-                widthPercent = .618f,
+                widthPercent = 618f,
                 topEnd = CornerSize(12.dp),
                 bottomEnd = CornerSize(12.dp)
             ),
@@ -182,11 +185,13 @@ fun MainPage(
                     }
                 }
             }) { paddingValues ->
+            // 定义CompositionLocal
             CompositionLocalProvider(
                 LocalLoginState provides isLogin.value,
                 LocalSnackbarHostState provides snackbarHostState
             ) {
                 LogCompositions(msg = "CompositionLocalProvider")
+                // 注册路由
                 RouterRegister(
                     navController = appState.navController,
                     loginController = { loginState, showBottomNav ->
