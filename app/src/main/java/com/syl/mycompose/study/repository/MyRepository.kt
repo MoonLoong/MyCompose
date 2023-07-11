@@ -14,6 +14,9 @@ import com.syl.mycompose.study.model.UserInfo
 import com.syl.mycompose.study.model.UserShareList
 import timber.log.Timber
 
+/**
+ * 数据仓库
+ */
 object MyRepository {
 
     suspend fun fetchHomeList(page: Int): Result<HomeList?> {
@@ -53,7 +56,7 @@ object MyRepository {
     }
 
     /**
-     * 异常处理，减少模板代码
+     * 异常处理，减少模板代码，集中处理
      */
     @OptIn(ExperimentalContracts::class)
     private suspend inline fun <T> handleException(crossinline onSuccess: suspend () -> HttpResult<T?>): Result<T?> {

@@ -27,7 +27,9 @@ import androidx.compose.ui.unit.sp
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 
-
+/**
+ * 定义上拉家族下拉刷新状态
+ */
 sealed class RefreshLoadMoreState {
     /**
      * 初始状态
@@ -171,17 +173,23 @@ fun RefreshLoadMoreLazyColum(
             flingBehavior = flingBehavior,
             userScrollEnabled = userScrollEnabled
         ) {
-            if (state is RefreshLoadMoreState.Error) {
-                item { errorContent(state) }
-            } else if (state == RefreshLoadMoreState.NoData) {
-                item { noDataContent() }
-            } else {
-                content()
-                if (state == RefreshLoadMoreState.Idle) return@LazyColumn
-                item {
-                    loadMoreContent()
-                    if (state == RefreshLoadMoreState.HasMore) {
-                        loadMoreCallBack()
+            when (state) {
+                is RefreshLoadMoreState.Error -> {
+                    item { errorContent(state) }
+                }
+
+                RefreshLoadMoreState.NoData -> {
+                    item { noDataContent() }
+                }
+
+                else -> {
+                    content()
+                    if (state == RefreshLoadMoreState.Idle) return@LazyColumn
+                    item {
+                        loadMoreContent()
+                        if (state == RefreshLoadMoreState.HasMore) {
+                            loadMoreCallBack()
+                        }
                     }
                 }
             }

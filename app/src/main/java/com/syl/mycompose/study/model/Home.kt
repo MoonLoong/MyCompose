@@ -6,6 +6,9 @@ import androidx.room.PrimaryKey
 import com.syl.mycompose.study.core.gson.GsonUtils
 
 
+/**
+ * 首页数据模型
+ */
 data class HomeList(
     val curPage: Int,
     val datas: List<Article>,

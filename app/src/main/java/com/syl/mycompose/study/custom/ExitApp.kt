@@ -26,6 +26,7 @@ fun MyBackHandler(snackbarHostState: SnackbarHostState = LocalSnackbarHostState.
         val curTime = System.currentTimeMillis()
         if (curTime - lastBackTime > 2000) {
             scope.launch {
+                // compose 支持子线程更新UI,showSnackbar 是挂起函数
                 snackbarHostState.showSnackbar(exitApp)
             }
             lastBackTime = curTime

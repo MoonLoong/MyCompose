@@ -33,14 +33,17 @@ import kotlin.math.min
  * 个人主页头像
  */
 @Composable
-fun ProfileAvatarC(modifier: Modifier=Modifier, scrollProvider: () -> Int) {
+fun ProfileAvatarC(modifier: Modifier = Modifier, scrollProvider: () -> Int) {
     val collapseRange = with(LocalDensity.current) { ExpandedImageOffsetY.toPx() }
     //开始收缩的距离差值
     val offset = with(LocalDensity.current) { CollapsedOffsetY.toPx() }
     val collapseFractionProvider =
         { ((scrollProvider() - offset) / collapseRange).coerceIn(0f, 1f) }
 
-    CollapsingAvatarLayout(modifier=modifier,collapseFractionProvider = collapseFractionProvider) {
+    CollapsingAvatarLayout(
+        modifier = modifier,
+        collapseFractionProvider = collapseFractionProvider
+    ) {
         Surface(
             shadowElevation = 8.dp,
             shape = CircleShape,
@@ -48,7 +51,7 @@ fun ProfileAvatarC(modifier: Modifier=Modifier, scrollProvider: () -> Int) {
             modifier = Modifier.fillMaxSize()
         ) {
             Image(
-                painter = painterResource(id = R.drawable.avatar_1),
+                painter = painterResource(id = R.drawable.avatar_3),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
@@ -60,6 +63,9 @@ fun ProfileAvatarC(modifier: Modifier=Modifier, scrollProvider: () -> Int) {
     }
 }
 
+/**
+ * 自定义折叠头像布局
+ */
 @Composable
 private fun CollapsingAvatarLayout(
     collapseFractionProvider: () -> Float,

@@ -36,7 +36,9 @@ import com.syl.mycompose.study.widget.RefreshLoadMoreLazyColum
 import com.syl.mycompose.study.widget.RefreshLoadMoreState
 
 
-
+/**
+ * 定义首页的 NavGraph
+ */
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.homeMainPage(
     navController: NavHostController,
@@ -57,6 +59,7 @@ fun HomeMainPage(
     viewModel: HomeMainViewModel = viewModel(),
     launchToDetailPage: ((Article) -> Unit)? = null
 ) {
+    // liveData 转 state
     val pageState by viewModel.pageState.observeAsState(PageState.Loading)
 
     val tabs by viewModel.homeTab.observeAsState(emptyList())
@@ -67,6 +70,7 @@ fun HomeMainPage(
 
     MyBackHandler()
 
+    // 外层显示状态页面
     PageHolder(
         pageState,
         modifier
@@ -74,6 +78,7 @@ fun HomeMainPage(
         val isDark = isSystemInDarkTheme()
         Column {
             Surface(shadowElevation = 4.dp) {
+                // 支持横向滑动的tab
                 ScrollableTabRow(
                     selectedTabIndex = selectTab,
                     containerColor =
@@ -106,7 +111,7 @@ fun HomeMainPage(
                     }
                 }
             }
-
+            // 支持刷新和加载更多的列表
             RefreshLoadMoreLazyColum(
                 modifier = Modifier.fillMaxSize(),
                 state = refreshLoadMoreState,

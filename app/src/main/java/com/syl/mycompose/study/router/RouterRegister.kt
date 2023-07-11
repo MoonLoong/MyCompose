@@ -28,6 +28,12 @@ import com.syl.mycompose.study.features.register.registerPage
 import com.syl.mycompose.study.features.test_click.testClickPage
 import com.syl.mycompose.study.features.webview.webviewPage
 
+/**
+ * Navigation中有三个主要的概念：
+ * Navigation Graph（导航图），
+ * NavHost（导航容器）
+ * NavController（导航控制器）
+ */
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun RouterRegister(
@@ -38,8 +44,9 @@ fun RouterRegister(
 ) {
     AnimatedNavHost(
         navController = navController,
-        startDestination = Router.HomePage.route,
+        startDestination = Router.HomePage.route,// 默认首页
         modifier = modifier,
+        // 进出场动画
         enterTransition = {
             if (targetState.isHomePage()) {
                 fadeIn(animationSpec = tween(700))
@@ -82,7 +89,7 @@ fun RouterRegister(
 
         loginPage(navController, loginController, showBottomNavigationBar)
 
-        registerPage(navController, loginController,showBottomNavigationBar)
+        registerPage(navController, loginController, showBottomNavigationBar)
 
         freeStylePage(navController)
 
@@ -90,11 +97,9 @@ fun RouterRegister(
 
         changeLanguagePage(navController)
 
-//        openSourceLibsPage(navController, showBottomNavigationBar)
+        webviewPage(navController, showBottomNavigationBar)
 
-        webviewPage(navController,showBottomNavigationBar)
-
-        collectionPage(navController,showBottomNavigationBar)
+        collectionPage(navController, showBottomNavigationBar)
 
         testClickPage(navController)
     }
@@ -105,8 +110,6 @@ fun RouterRegister(
  */
 fun NavBackStackEntry.isHomePage(): Boolean {
     return destination.hierarchy.any {
-        it.route == Router.HomePage.route
-                || it.route == Router.ProjectPage.route
-                || it.route == Router.ProfilePage.route
+        it.route == Router.HomePage.route || it.route == Router.ProjectPage.route || it.route == Router.ProfilePage.route
     }
 }

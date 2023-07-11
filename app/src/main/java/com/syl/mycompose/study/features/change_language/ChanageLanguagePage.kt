@@ -47,6 +47,9 @@ fun NavGraphBuilder.changeLanguagePage(
     }
 }
 
+/**
+ * 切换语言
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ChangeThemePage(clickBack: () -> Unit) {
@@ -61,6 +64,7 @@ fun ChangeThemePage(clickBack: () -> Unit) {
 
     if (hasChange) {
         DisposableEffect(Unit) {
+            // 重新打开首页
             Intent(ctx, MainActivity::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             }.also { ctx.startActivity(it) }

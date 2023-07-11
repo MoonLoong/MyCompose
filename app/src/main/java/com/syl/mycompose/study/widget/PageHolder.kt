@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -20,7 +21,7 @@ import com.syl.mycompose.study.core.page.PageState
 
 
 /**
- * 状态页面
+ * 状态页面，
  */
 @Composable
 fun <T> PageHolder(
@@ -91,7 +92,10 @@ fun ErrorPreView() {
     }
 }
 
-@Preview(showBackground = true)
+/**
+ * 预览如果不设置背景，会显示主题
+ */
+@Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
 @Composable
 fun EmptyPreView() {
     PageHolder(pageState = PageState.Empty()) {

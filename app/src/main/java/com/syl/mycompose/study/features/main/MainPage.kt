@@ -122,6 +122,7 @@ fun MainPage(
     LogCompositions(msg = "MainPage")
 
     AndroidTemplateTheme {
+        // 注意这里使用的是 material.Scaffold
         androidx.compose.material.Scaffold(
             scaffoldState = scaffoldState,
             //因为使用的androidx.compose.material.Scaffold
@@ -132,32 +133,32 @@ fun MainPage(
                     CustomSnackBar(data = data)
                 }
             },
-            drawerContent = if (!appState.shouldShowBottomBar && showNavigationBar) {
-                {
-                    DrawableContentC(isSelect = { model ->
-                        selectNav.value == model.tag
-                    }) { model ->
-                        if (scaffoldState.drawerState.isOpen) {
-                            scope.launch { scaffoldState.drawerState.close() }
-                        }
-                        selectNav.value = model.tag
-                        appState.navController.navigate(
-                            when (model.tag) {
-                                HomeNav.HOME -> Router.HomePage.route
-                                HomeNav.PROJECT -> Router.ProjectPage.route
-                                HomeNav.PROFILE -> Router.ProfilePage.route
-                            }
-                        ) {
-                            commonSetup(appState.navController)
-                        }
-                    }
-                }
-            } else null,
-            drawerShape = DrawerShape(
-                widthPercent = 618f,
-                topEnd = CornerSize(12.dp),
-                bottomEnd = CornerSize(12.dp)
-            ),
+//            drawerContent = if (!appState.shouldShowBottomBar && showNavigationBar) {
+//                {
+//                    DrawableContentC(isSelect = { model ->
+//                        selectNav.value == model.tag
+//                    }) { model ->
+//                        if (scaffoldState.drawerState.isOpen) {
+//                            scope.launch { scaffoldState.drawerState.close() }
+//                        }
+//                        selectNav.value = model.tag
+//                        appState.navController.navigate(
+//                            when (model.tag) {
+//                                HomeNav.HOME -> Router.HomePage.route
+//                                HomeNav.PROJECT -> Router.ProjectPage.route
+//                                HomeNav.PROFILE -> Router.ProfilePage.route
+//                            }
+//                        ) {
+//                            commonSetup(appState.navController)
+//                        }
+//                    }
+//                }
+//            } else null,
+//            drawerShape = DrawerShape(
+//                widthPercent = 618f,
+//                topEnd = CornerSize(12.dp),
+//                bottomEnd = CornerSize(12.dp)
+//            ),
             bottomBar = {
                 AnimatedVisibility(
                     visible = appState.shouldShowBottomBar && showNavigationBar,

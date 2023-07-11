@@ -34,13 +34,17 @@ import com.syl.mycompose.study.widget.MyTopAppBar
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.glideImagePage(navController: NavHostController) {
     composable(Router.GlideImagePage.route) {
-        GlideImagePage() {
+        GlideImagePage {
             navController.popBackStack()
         }
     }
 }
 
-val imageUrl =
+
+/**
+ * 测试图片地址
+ */
+const val imageUrl =
     "https://img1.baidu.com/it/u=3009731526,373851691&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500"
 
 @ThemePreviews

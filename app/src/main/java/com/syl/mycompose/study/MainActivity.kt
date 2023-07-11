@@ -17,7 +17,7 @@ import timber.log.Timber
 
 
 /**
- * 首页
+ * 首页 （单Activity模式）
  */
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
@@ -28,15 +28,16 @@ class MainActivity : ComponentActivity() {
         Timber.tag(TAG_LIFECYCLE).d("onCreate")
         setContent {
             val windowSizeClass = calculateWindowSizeClass(this)
+            // 创建appState，使用 navController 进行页面导航
             val appState = rememberAppState(windowSizeClass = windowSizeClass)
             val navHostController = appState.navController
             val currentBackStackEntryAsState by navHostController.currentBackStackEntryAsState()
+            // 启动协程打印日志
             LaunchedEffect(navHostController, currentBackStackEntryAsState) {
-                Timber.tag(TAG_INFO)
-                    .d(
-                        "当前页面栈信息：${currentBackStackEntryAsState?.destination?.route}," +
-                                "栈内页面数量：${navHostController.backQueue.map { it.destination.route }}"
-                    )
+                Timber.tag(TAG_INFO).d(
+                    "当前页面栈信息：${currentBackStackEntryAsState?.destination?.route}," +
+                            "栈内页面数量：${navHostController.backQueue.map { it.destination.route }}"
+                )
             }
             MainPage(windowSizeClass, appState = appState)
         }

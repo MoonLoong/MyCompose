@@ -2,7 +2,7 @@ package com.syl.mycompose.study.repository.remote
 
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
-import com.syl.mycompose.study.repository.WanAndroidApi
+import com.syl.mycompose.study.repository.ApiService
 import com.syl.mycompose.study.core.http.NetworkHandler
 import com.syl.mycompose.study.core.http.interceptor.CacheCookieInterceptor
 import com.syl.mycompose.study.core.http.interceptor.SetCookieInterceptor
@@ -18,7 +18,7 @@ object NetHelper {
 
     private lateinit var _httpClient: OkHttpClient
 
-    lateinit var service: WanAndroidApi
+    lateinit var service: ApiService
 
     lateinit var networkHandler: NetworkHandler
 
@@ -37,7 +37,7 @@ object NetHelper {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        service = _retrofit.create(WanAndroidApi::class.java)
+        service = _retrofit.create(ApiService::class.java)
 
         networkHandler = NetworkHandler(context)
     }

@@ -22,7 +22,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 
-
+/**
+ * 自定义TopAppBar
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyTopAppBar(
@@ -30,7 +32,7 @@ fun MyTopAppBar(
     title: String = "",
     backIcon: ImageVector = Icons.Default.ArrowBack,
     elevation: Dp = 4.dp,
-    actions: @Composable RowScope.() -> Unit = {},
+    actions: @Composable RowScope.() -> Unit = {}, // 其他功能
     clickBack: () -> Unit
 ) {
 
