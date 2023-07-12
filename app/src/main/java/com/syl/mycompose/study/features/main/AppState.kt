@@ -11,6 +11,7 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 /**
+ * StateHolder 管理状态
  * 根据 windowSizeClass 创建 navController
  */
 @OptIn(ExperimentalAnimationApi::class)
@@ -24,6 +25,9 @@ fun rememberAppState(
     }
 }
 
+/**
+ * 稳定的不变的状态
+ */
 @Stable
 class AppState(
     val navController: NavHostController,

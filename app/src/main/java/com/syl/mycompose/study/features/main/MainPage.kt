@@ -105,6 +105,7 @@ fun MainPage(
     appState: AppState = rememberAppState(windowSizeClass)
 ) {
 
+    // 持久化保存状态
     val selectNav = rememberSaveable { mutableStateOf(HomeNav.HOME) }
 
     val isLogin = remember {

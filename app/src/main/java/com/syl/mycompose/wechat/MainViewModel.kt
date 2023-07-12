@@ -14,6 +14,12 @@ import com.syl.mycompose.theme.WeComposeTheme
 
 /**
  * 首页ViewModel
+ *
+ * 注意⚠️：
+ * ViewModel 应该与 UI 框架解耦，而 State 是属于 Compose 框架的，甚至难以在 Activity 或其他组件中直接使用。
+ *
+ * 「不推荐在 ViewModel 中直接使用 Compose 的 State」
+ *  可以将ViewModel中的LiveData、Flow、RxJava转换成State，在Composable函数中使用
  */
 class MainViewModel: ViewModel() {
 
