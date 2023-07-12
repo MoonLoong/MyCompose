@@ -26,7 +26,10 @@ fun rememberAppState(
 }
 
 /**
- * 稳定的不变的状态
+ * @Stable 和 @Immutable，两者都继承自@StableMarker
+ * 告诉编译器，我是稳定的不变的状态
+ * 可以跳过不必要的重组
+ * 前者能力完全覆盖了后者，未来Immutable有可能会被移除，建议大家优先选择使用Stable。
  */
 @Stable
 class AppState(

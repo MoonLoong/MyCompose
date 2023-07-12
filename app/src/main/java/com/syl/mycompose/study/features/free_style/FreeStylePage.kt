@@ -51,7 +51,6 @@ import com.syl.mycompose.study.widget.MyTopAppBar
 import timber.log.Timber
 
 
-
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.freeStylePage(
     navController: NavHostController
@@ -178,21 +177,32 @@ fun EffectDemo(testFunc: suspend () -> Unit) {
     }
     LogCompositions(msg = "Effect")
 
+    /**
+     * 仅在重组成功时才会执行
+     */
     SideEffect {
         Timber.tag("Effect").d("SideEffect执行了")
     }
 
-    //key1传Unit或者true，首次渲染执行一次
+    /**
+     * key1传Unit或者true，首次渲染执行一次
+     * onDispose 中执行释放资源
+     */
     DisposableEffect(Unit) {
         Timber.tag("Effect").d("DisposableEffect执行了")
         onDispose {
 
         }
     }
+
+    /**
+     * 处理异步任务
+     */
     LaunchedEffect(Unit) {
         Timber.tag("Effect").d("LaunchedEffect执行了")
         testFunc()
     }
+
     Text(text = "测试Effect：$counter")
     Button(onClick = {
         counter += 1

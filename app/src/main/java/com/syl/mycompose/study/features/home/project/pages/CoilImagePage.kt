@@ -39,6 +39,7 @@ fun NavGraphBuilder.coilImagePage(navController: NavHostController) {
         }
     }
 }
+
 @ThemePreviews
 @DevicePreviews
 @OptIn(ExperimentalMaterial3Api::class)
@@ -46,25 +47,49 @@ fun NavGraphBuilder.coilImagePage(navController: NavHostController) {
 fun CoilImagePage(clickBack: (() -> Unit)? = null) {
     AndroidTemplateTheme {
         Scaffold(topBar = {
-            MyTopAppBar(title = "实验Coil加载图片功能", clickBack = clickBack ?: {})
+            MyTopAppBar(
+                title = "实验Coil加载图片功能",
+                clickBack = clickBack ?: {})
         }) { paddingValue ->
             Column(Modifier.padding(paddingValue)) {
 
-                Text(text = "简单加载", style = MaterialTheme.typography.titleLarge)
-                Spacer(modifier = Modifier.height(12.dp))
-
-                AsyncImage(model = imageUrl, contentDescription = null)
+                Text(
+                    text = "简单加载",
+                    style = MaterialTheme.typography.titleLarge
+                )
+                Spacer(
+                    modifier = Modifier.height(12.dp)
+                )
+                /**
+                 * 异步加载图片
+                 * 内部使用了 rememberAsyncImagePainter
+                 */
+                AsyncImage(
+                    model = imageUrl,
+                    contentDescription = null
+                )
 
 
                 Divider(Modifier.padding(vertical = 8.dp))
 
-                Text(text = "监听状态", style = MaterialTheme.typography.titleLarge)
+                Text(
+                    text = "监听状态",
+                    style = MaterialTheme.typography.titleLarge
+                )
                 Spacer(modifier = Modifier.height(12.dp))
 
+                /**
+                 * 返回一个异步ImagePainter，该程序异步执行ImageRequest并呈现结果。
+                 * 这是一个比AsyncImage更低级别的API，可能无法在所有情况下都按预期工作
+                 */
                 val painter = rememberAsyncImagePainter(imageUrl)
 
                 Box {
-                    Image(painter = painter, contentDescription = null, Modifier.size(200.dp))
+                    Image(
+                        painter = painter,
+                        contentDescription = null,
+                        Modifier.size(200.dp)
+                    )
                     when (painter.state) {
                         is AsyncImagePainter.State.Loading -> {
                             // 显示一个加载中的进度条
@@ -73,7 +98,8 @@ fun CoilImagePage(clickBack: (() -> Unit)? = null) {
 
                         is AsyncImagePainter.State.Error -> {
                             // 如果发生了什么错误，你可以在这里写
-                            Text(text = "发生错误",
+                            Text(
+                                text = "发生错误",
 //                                color = TextColorRed
                             )
                         }

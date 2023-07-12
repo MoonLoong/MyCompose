@@ -204,6 +204,11 @@ fun ProfileMainPage(
 
     val loginState = LocalLoginState.current
     if (loginState) {
+        /**
+         * key为Unit或true这样的常量，则block只在OnActive时执行一次。即登录后只请求一次
+         * 如果key为其他变量，则block在OnActive以及参数变化时的OnUpdate中执行，
+         * 如果key变化时，block再次执行。
+         */
         DisposableEffect(Unit) {
             viewModel.fetchUserInfo()
             viewModel.fetchMyShare(true)

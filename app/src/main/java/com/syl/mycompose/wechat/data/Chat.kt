@@ -1,6 +1,5 @@
 package com.syl.mycompose.wechat.data
 
-import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -20,8 +19,7 @@ class Msg(val from: User, val text: String, val time: String) {
 }
 
 /**
- * 如果定义data class 的实体类，必须添加 @Stable 或 @Immutable 注释表示不可变
+ * 如果定义data class 的实体类，必须添加 @Stable 注释表示不可变
  */
 @Stable
-@Immutable
 data class Aa(val aa: String)
