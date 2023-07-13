@@ -26,6 +26,7 @@ import androidx.navigation.NavHostController
 import com.github.panpf.sketch.compose.AsyncImage
 import com.github.panpf.sketch.request.svgBackgroundColor
 import com.google.accompanist.navigation.animation.composable
+import com.syl.mycompose.study.constant.imageUrl
 import com.syl.mycompose.study.core.preview.DevicePreviews
 import com.syl.mycompose.study.core.preview.ThemePreviews
 import com.syl.mycompose.study.router.Router

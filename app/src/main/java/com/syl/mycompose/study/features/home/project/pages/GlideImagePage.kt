@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.composable
+import com.syl.mycompose.study.constant.imageUrl
 import com.syl.mycompose.study.core.preview.DevicePreviews
 import com.syl.mycompose.study.core.preview.ThemePreviews
 import com.syl.mycompose.study.router.Router
@@ -40,12 +41,6 @@ fun NavGraphBuilder.glideImagePage(navController: NavHostController) {
     }
 }
 
-
-/**
- * 测试图片地址
- */
-const val imageUrl =
-    "https://img1.baidu.com/it/u=3009731526,373851691&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500"
 
 @ThemePreviews
 @DevicePreviews

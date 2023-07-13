@@ -24,6 +24,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+
+/**
+ * 使用Glide进行了封装，并非Glide Compose Version
+ *
+ * Glide Compose 版本目前为 1.0.0-alpha.1
+ */
 @Composable
 fun GlideImage(
     model: Any?,

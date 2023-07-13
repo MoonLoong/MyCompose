@@ -24,6 +24,7 @@ import coil.compose.AsyncImage
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import com.google.accompanist.navigation.animation.composable
+import com.syl.mycompose.study.constant.imageUrl
 import com.syl.mycompose.study.core.preview.DevicePreviews
 import com.syl.mycompose.study.core.preview.ThemePreviews
 import com.syl.mycompose.study.router.Router
@@ -40,6 +41,12 @@ fun NavGraphBuilder.coilImagePage(navController: NavHostController) {
     }
 }
 
+
+/**
+ * Coil 名字的由来：取 Coroutine Image Loader 首字母得来。
+ *
+ * 更快、更轻、更容易使用
+ */
 @ThemePreviews
 @DevicePreviews
 @OptIn(ExperimentalMaterial3Api::class)

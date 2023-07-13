@@ -2,6 +2,7 @@ package com.syl.mycompose.wechat.ui.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -26,6 +27,9 @@ fun Home(viewModel: MainViewModel) {
                 3 -> MeList()
             }
         }
+//        LaunchedEffect(key1 = pagerState.currentPage, block = {
+//            pagerState.animateScrollToPage(page)
+//        })
         val scope = rememberCoroutineScope() // 创建 CoroutineScope
         // 不显示 viewModel.selectedTab，改为 pagerState.currentPage
         WeBottomBar(pagerState.currentPage) { page ->
