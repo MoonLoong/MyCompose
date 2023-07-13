@@ -197,10 +197,12 @@ fun LoginPage(
                         RadioButton(
                             selected = selectProtocol,
                             onClick = { selectProtocol = !selectProtocol })
-                        PolicyText(
+                        PrivacyPolicy(
                             privacyUrl = HttpUrl.Privacy_Policy,
-                            userUrl = HttpUrl.User_Policy,
                             clickPrivacy = launchPrivacyPage,
+                        )
+                        UserAgreement(
+                            userUrl = HttpUrl.User_Policy,
                             clickUser = launchUserPage
                         )
                     }
@@ -285,20 +287,19 @@ fun NameAndPassword(
     )
 }
 
+/**
+ * 隐私协议
+ */
 @Composable
-fun PolicyText(
+fun PrivacyPolicy(
     privacyUrl: String,
-    userUrl: String,
     clickPrivacy: (String) -> Unit,
-    clickUser: (String) -> Unit
 ) {
     // 构建注解文本
     val privacyTag = "PrivacyPolicy"
-    val userTag = "UserPolicy"
 
     val text = buildAnnotatedString {
         append(stringResource(id = R.string.i_had_read))
-
         pushStringAnnotation(
             tag = privacyTag,
             annotation = privacyUrl
@@ -306,9 +307,30 @@ fun PolicyText(
         withStyle(style = SpanStyle(color = MaterialTheme.colorScheme.primary)) {
             append("《${stringResource(id = R.string.privacy_policy)}》")
         }
-
         append(stringResource(id = R.string.and))
+        pop()
+    }
 
+    ClickableText(text = text, onClick = { index ->
+        text.getStringAnnotations(
+            tag = privacyTag,
+            start = index,
+            end = index
+        ).firstOrNull()?.let { annotation ->
+            clickPrivacy(annotation.item)
+        }
+    })
+}
+
+@Composable
+fun UserAgreement(
+    userUrl: String,
+    clickUser: (String) -> Unit
+) {
+    // 构建注解文本
+    val userTag = "UserPolicy"
+
+    val text = buildAnnotatedString {
         pushStringAnnotation(
             tag = userTag,
             annotation = userUrl
@@ -321,15 +343,9 @@ fun PolicyText(
 
     ClickableText(text = text, onClick = { index ->
         text.getStringAnnotations(
-            tag = privacyTag,
+            tag = userTag,
             start = index,
             end = index
-        ).firstOrNull()?.let { annotation ->
-            clickPrivacy(annotation.item)
-        }
-        text.getStringAnnotations(
-            tag = userTag,
-            start = index, end = index
         ).firstOrNull()?.let { annotation ->
             clickUser(annotation.item)
         }
